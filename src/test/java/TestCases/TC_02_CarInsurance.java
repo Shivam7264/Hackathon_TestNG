@@ -11,9 +11,9 @@ public class TC_02_CarInsurance extends BaseClass{
 	  public void navigatingCarInsurance() {
 		  logger.info("verifying car insurance");
 		   homePage hp=new homePage(driver);
-		   
+		   carDetails cp=new carDetails(driver);
 		   hp.clickCar();
-		   hp.noNumber();
+		   cp.noNumber();
 	  }
 	@Test(priority=2,groups= {"master"},dependsOnMethods= {"navigatingCarInsurance"})
 	  public void settingCarDetails() {

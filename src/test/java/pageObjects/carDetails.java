@@ -12,7 +12,11 @@ BaseClass base =new BaseClass();
 	}
 	
 	
+	@FindBy(xpath = "//a[text()='Buying a new car? Click here']")//do not know no. button
+	WebElement donotKnow;
 	
+	@FindBy(xpath = "//span[normalize-space()=\"Click here\"]")//do not know no. button
+	WebElement donotKnowNew;
 	
 
 
@@ -77,6 +81,11 @@ BaseClass base =new BaseClass();
 	@FindBy(xpath = "//div[@class=\"errorMsg\"]")//error msg button
 	WebElement errorMsgNew;
 
+	public void noNumber() {
+		//base.clicker(donotKnow);
+		base.clicker(donotKnowNew);
+	}
+		
 	public void chooseCity() {
 		//base.clicker(city);
 		base.clicker(cityNew);
@@ -90,7 +99,7 @@ BaseClass base =new BaseClass();
 	}
 	public void chooseCarBrand() {
 		
-//		base.clicker(brand);
+		//base.clicker(brand);
 		base.clicker(brandNew);
 	}
 	public void chooseCarModel() {
