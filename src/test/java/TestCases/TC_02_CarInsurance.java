@@ -31,35 +31,12 @@ public class TC_02_CarInsurance extends BaseClass{
 		  cp.fillDetails();
 		  String res=  cp.getErrorMsg();
 			       try {
-			     Assert.assertEquals(res, "Please enter a valid e-mail ID.");
+			     Assert.assertEquals(res, "Enter a valid email id");
 			       }
 			       catch(Exception e) {
 			    	   System.out.println("failed");
 			       }
 	  }
-	  // @Test(priority=4,groups= {"regression","master"},dependsOnMethods= {"verifyErrorMessage"})
-	   public void verifyCarInsurance() {
-		   logger.info("verifying car insurance");
-		   homePage hp=new homePage(driver);
-		   carDetails cp=new carDetails(driver);
-		   hp.clickCar();
-		   hp.noNumber();
-		   cp.chooseCity();
-	       cp.chooseCityCode();
-	       cp.chooseCarBrand();
-	       cp.chooseCarModel();
-	       cp.selectFuelType();
-	       cp.chooseCarVariant();
-	       cp.fillDetails();
-	 //      cp.getErrorMsg();
-	     String res=  cp.getErrorMsg();
-	       try {
-	     Assert.assertEquals(res, "Please enter a valid e-mail ID.");
-	       }
-	       catch(Exception e) {
-	    	   System.out.println("failed");
-	       }
-		   
-	   }
+	  
 	   
 }
