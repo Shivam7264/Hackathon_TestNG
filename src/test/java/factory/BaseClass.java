@@ -102,6 +102,7 @@ public class BaseClass {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		//driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
 		
 		
 		driver.get(p.getProperty("appURL"));
@@ -144,6 +145,8 @@ public class BaseClass {
 	
 	public void clicker(WebElement ele) {// to click on any web element using java script executor
 		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("arguments[0].style.border='3px solid red'", ele);
+
 		js.executeScript("arguments[0].click();",ele);
 	}
 	

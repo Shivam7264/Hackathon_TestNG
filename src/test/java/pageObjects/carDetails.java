@@ -1,6 +1,4 @@
 package pageObjects;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,58 +9,98 @@ public class carDetails extends BasePage {
 BaseClass base =new BaseClass();
 	public carDetails(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
+	@FindBy(xpath = "//a[text()='Buying a new car? Click here']")//do not know no. button
+	WebElement donotKnow;
 	
+	@FindBy(xpath = "//span[normalize-space()=\"Click here\"]")//do not know no. button
+	WebElement donotKnowNew;
 	
-	@FindBy(xpath = "//*[@class=\"msg-error show\"]")//error msg button
-	WebElement errorMsg;
-
 	@FindBy(xpath = "//*[@id='dvRTO']/div/ul/li[3]/span[1]")//city button
 	WebElement city;
+	
+	@FindBy(xpath = "//span[normalize-space()='Mumbai']")//city button
+	WebElement cityNew;
 
 	@FindBy(xpath = "//*[@id=\"section3\"]/ul/li[2]/span")//city code button
 	WebElement cityCode;
+	
+	@FindBy(xpath = "//li[text()='MH43']")//city code button
+	WebElement cityCodeNew;
 
 	@FindBy(xpath = "//b[text()='MARUTI']")//brand button
 	WebElement brand;
+	
+	@FindBy(xpath = "//span[text()=\"KIA\"]")//brand button
+	WebElement brandNew;
 
 	@FindBy(xpath = "//b[text()='Brezza']")//model button
 	WebElement model;
+	
+	@FindBy(xpath = "//li[text()=\"CARNIVAL\"]")//model button
+	WebElement modelNew;
 
 	@FindBy(xpath = "//*[@id=\"Petrol\"]")//fuel button
 	WebElement fuelType;
 
-	@FindBy(xpath = "//b[text()='ZXi (1462 cc)']")//variant button
+	@FindBy(xpath = "//b[text()='ZXI AT (1462 cc)']")//variant button
 	WebElement variant;
+	
+	@FindBy(xpath = "//li[text()=\"Premium 8 STR (2199 cc)\"]")//variant button
+	WebElement variantNew;
 
 
 	@FindBy(xpath = "//*[@id=\"name\"]")//name box
 	WebElement selectName;
+	
+	@FindBy(xpath = "//input[@tabindex=\"1\"]")//name box
+	WebElement selectNameNew;
 
 	@FindBy(xpath = "//*[@id=\"email\"]")//email box
 	WebElement selectEmail;
+	
+	@FindBy(xpath = "//input[@tabindex=\"2\"]")//email box
+	WebElement selectEmailNew;
 
 	@FindBy(xpath = "//button[@name='next']")//view prices button
 	WebElement btnViewPrices;
+	
+	@FindBy(xpath = "//button[text()=\"View Prices\"]")//view prices button
+	WebElement btnViewPricesNew;
+	
+	@FindBy(xpath = "//*[@class=\"msg-error show\"]")//error msg button
+	WebElement errorMsg;
+	
+	@FindBy(xpath = "//div[@class=\"errorMsg\"]")//error msg button
+	WebElement errorMsgNew;
 
+	
+	public void noNumber() {
+		base.clicker(donotKnow);
+		//base.clicker(donotKnowNew);
+	}
+	
 	public void chooseCity() {
 		base.clicker(city);
+		//base.clicker(cityNew);
 		
 	}
 	
 	public void chooseCityCode() {
 		
 		base.clicker(cityCode);
+		//base.clicker(cityCodeNew);
 	}
 	public void chooseCarBrand() {
 		
 		base.clicker(brand);
+		//base.clicker(brandNew);
 	}
 	public void chooseCarModel() {
 		
 		base.clicker(model);
+		//base.clicker(modelNew);
 	}
 	public void selectFuelType() {
 		base.clicker(fuelType);
@@ -70,10 +108,13 @@ BaseClass base =new BaseClass();
 	public void chooseCarVariant() {
 		
 		base.clicker(variant);
+		//base.clicker(variantNew);
 	}
 	public void fillDetails() {
 		selectName.sendKeys("xyx");
 		selectEmail.sendKeys("1234@ejdbeujb");
+//		selectNameNew.sendKeys("xyx");
+//		selectEmailNew.sendKeys("1234@ejdbeujb");
 	
 	}
 	public String getErrorMsg(){
@@ -82,8 +123,11 @@ BaseClass base =new BaseClass();
         // ANSI escape code for reset color
         String resetColor = "\u001B[0m";
 		base.clicker(btnViewPrices);
+		//   base.clicker(btnViewPricesNew);
 		System.out.println("Error Message :"+redColor+errorMsg.getText()+resetColor);
 		return errorMsg.getText();
+       // System.out.println("Error Message :"+redColor+errorMsgNew.getText()+resetColor);
+		//return errorMsgNew.getText();
 	}
 	
 	

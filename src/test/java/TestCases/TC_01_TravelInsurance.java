@@ -33,13 +33,13 @@ public class TC_01_TravelInsurance extends BaseClass{
 	 	tp.clickCountry();
 		tp.clickNext();
   			}
-	@Test(priority=2, dependsOnMethods= {"setDestination"})
+	@Test(priority=2,groups= {"regression","master"}, dependsOnMethods= {"setDestination"})
   	public void setTripDate() throws InterruptedException {
   		travelDetailsPage tp=new travelDetailsPage(driver);
   		tp.selectDate();
 	  
   	}
-	@Test(priority=3, dependsOnMethods= {"setTripDate"})
+	@Test(priority=3, groups= {"regression","master"},dependsOnMethods= {"setTripDate"})
   	public void setTravellersDetail() throws InterruptedException {
   		travelDetailsPage tp=new travelDetailsPage(driver);
   		tp.selectPeople();
@@ -49,20 +49,20 @@ public class TC_01_TravelInsurance extends BaseClass{
 		tp.clickNext();
 	  
   	}
-	@Test(priority=4, dependsOnMethods= {"setTravellersDetail"})
+	@Test(priority=4,groups= {"regression","master"}, dependsOnMethods= {"setTravellersDetail"})
   	public void setMedicalDFitness() {
   		travelDetailsPage tp=new travelDetailsPage(driver);
   		tp.medicalCondition();
 	  
   	}
 	
-	@Test(priority=5, dependsOnMethods= {"setMedicalDFitness"})
+	@Test(priority=5,groups= {"regression","master"}, dependsOnMethods= {"setMedicalDFitness"})
   	public void setContactDetails() {		
   		travelDetailsPage tp=new travelDetailsPage(driver);
   		tp.mobileNumber();
 		
   	}
-	@Test(priority=6, dependsOnMethods= {"setContactDetails"})
+	@Test(priority=6,groups= {"regression","master"}, dependsOnMethods= {"setContactDetails"})
   	public void showResult() throws InterruptedException {
 		logger.info("printing insurance plans ");
   		insuranceResultPage rs=new insuranceResultPage(driver);

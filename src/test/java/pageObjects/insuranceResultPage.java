@@ -23,7 +23,7 @@ BaseClass base=new BaseClass();
 		@FindBy(xpath = "//p[text()='Sort by']")
 		WebElement sortBy;//driver.findElement(By.xpath("//summary/p")).click();
 		
-		@FindBy(xpath = "(//input[@name='sort'])[2]")
+		@FindBy(xpath = "(//input[@name='sort'])[2]/..")
 		WebElement lowToHigh;
 		
 		@FindBy(xpath = "//*[@class='quotesCard--insurerName']")//NAME OF INSURANCE COMPANY
